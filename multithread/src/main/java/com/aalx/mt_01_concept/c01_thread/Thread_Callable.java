@@ -13,14 +13,30 @@
  * see <http://www.gnu.org/licenses/>.
  */
 
-package com.aalx;
+package com.aalx.mt_01_concept.c01_thread;
+
+import java.util.concurrent.Callable;
 
 /**
- * <p>Title: $file.className</p>
+ * <p>Title: Thread_Callable</p>
  * <p>Description: </p>
  *
  * @author aalx
- * @date 2020/4/14 11:11
+ * @date 2020/4/14 13:22
  */
-public class TEST {
+public class Thread_Callable implements Callable<Integer> {
+
+    private int i = 0;
+
+    @Override
+    public Integer call() {
+        System.out.println(Thread.currentThread().getName());
+        int sum = 0;
+        while(i<100){
+            i++;
+            sum += i;
+        }
+        return sum;
+    }
+
 }
