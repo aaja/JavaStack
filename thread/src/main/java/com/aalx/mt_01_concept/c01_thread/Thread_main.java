@@ -97,5 +97,9 @@ public class Thread_main {
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
+
+        new Thread(()->{
+            // do some thing ...
+        }).start();
     }
 }
